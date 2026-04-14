@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mudanças em Lisboa | Delta Move</title>
+  <meta name="description" content="Empresa de mudanças em Lisboa com embalamento completo, transporte seguro e atendimento profissional. Peça já o seu orçamento com a Delta Move." />
+  <meta name="keywords" content="mudanças em Lisboa, empresa de mudanças Lisboa, transporte de móveis Lisboa, mudanças residenciais Lisboa, mudanças comerciais Lisboa, Delta Move" />
+  <meta name="author" content="Delta Move" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg-soft:#121a2b;
+      --card:#111827;
+      --silver:#d7dde8;
+      --silver-2:#a8b1c4;
+      --blue:#3b82f6;
+      --blue-2:#60a5fa;
+      --white:#ffffff;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+      --radius:22px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(255,255,255,.08), transparent 22%),
+        linear-gradient(135deg, #0b1220 0%, #10192b 45%, #0b1220 100%);
+      color:var(--white);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(1180px, 92%);
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:999;
+      backdrop-filter:blur(14px);
+      background:rgba(11,18,32,.75);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      font-size:1.1rem;
+      letter-spacing:.5px;
+    }
+
+    .logo-badge{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:linear-gradient(135deg, var(--silver), var(--blue));
+      box-shadow:var(--shadow);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--silver);
+      font-size:.96rem;
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:var(--white);
+    }
+
+    .nav-cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--blue), var(--blue-2));
+      color:var(--white);
+      box-shadow:0 12px 30px rgba(59,130,246,.28);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(215,221,232,.22);
+      color:var(--white);
+      background:rgba(255,255,255,.03);
+    }
+
+    .btn-outline:hover{
+      background:rgba(255,255,255,.08);
+    }
+
+    .hero{
+      padding:90px 0 70px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:999px;
+      color:var(--silver);
+      background:rgba(255,255,255,.03);
+      margin-bottom:22px;
+      font-size:.92rem;
+      font-weight:600;
+    }
+
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+      line-height:1.1;
+    }
+
+    h1{
+      font-size:clamp(2.5rem, 5vw, 4.6rem);
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      color:var(--silver);
+      font-size:1.07rem;
+      max-width:690px;
+      margin-bottom:28px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:26px;
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+      margin-top:14px;
+    }
+
+    .point{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .point strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:6px;
+    }
+
+    .point span{
+      color:var(--silver);
+      font-size:.95rem;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card h3{
+      font-size:1.8rem;
+      margin-bottom:12px;
+    }
+
+    .hero-card p{
+      margin-bottom:18px;
+      color:var(--silver);
+    }
+
+    .mini-list{
+      display:grid;
+      gap:12px;
+      margin:18px 0 24px;
+    }
+
+    .mini-item{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .mini-icon{
+      min-width:34px;
+      height:34px;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(215,221,232,.25), rgba(59,130,246,.35));
+    }
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      max-width:780px;
+      margin:0 auto 44px;
+    }
+
+    .section-title h2{
+      font-size:clamp(2rem, 4vw, 3.2rem);
+      margin-bottom:16px;
+    }
+
+    .section-title p{
+      color:var(--silver);
+      font-size:1.02rem;
+    }
+
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+      height:100%;
+    }
+
+    .card h3{
+      font-size:1.45rem;
+      margin-bottom:14px;
+    }
+
+    .card p{
+      color:var(--silver);
+    }
+
+    .services-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .services-list div{
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#e8edf7;
+      font-weight:500;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+      align-items:stretch;
+    }
+
+    .quote-box{
+      padding:32px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(59,130,246,.18), rgba(215,221,232,.10));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow);
+    }
+
+    .quote-box h3{
+      font-size:2rem;
+      margin-bottom:14px;
+    }
+
+    .quote-box p{
+      color:#edf2fb;
+      margin-bottom:22px;
+    }
+
+    .areas{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+    }
+
+    .area{
+      padding:18px;
+      border-radius:18px;
+      text-align:center;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      font-weight:700;
+      color:#f5f7fb;
+    }
+
+    .faq{
+      display:grid;
+      gap:16px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .faq-item{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:20px;
+      padding:22px;
+    }
+
+    .faq-item h3{
+      font-size:1.18rem;
+      margin-bottom:10px;
+    }
+
+    .faq-item p{
+      color:var(--silver);
+    }
+
+    .cta{
+      padding:90px 0;
+    }
+
+    .cta-wrap{
+      background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(59,130,246,.14));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:34px;
+      padding:42px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .cta-wrap h2{
+      font-size:clamp(2rem, 4vw, 3rem);
+      margin-bottom:14px;
+    }
+
+    .cta-wrap p{
+      color:var(--silver);
+      max-width:760px;
+      margin:0 auto 24px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:34px 0 50px;
+      background:rgba(0,0,0,.15);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:24px;
+    }
+
+    .footer-col h4{
+      margin-bottom:12px;
+      font-size:1rem;
+      color:#f7f9fd;
+    }
+
+    .footer-col p,
+    .footer-col a{
+      color:var(--silver);
+      font-size:.96rem;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      background:linear-gradient(135deg, #25d366, #1ebe5d);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:1.6rem;
+      box-shadow:0 16px 35px rgba(37,211,102,.35);
+      z-index:999;
+    }
+
+    @media (max-width: 1100px){
+      .hero-grid,
+      .split,
+      .cards-3,
+      .areas,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-points{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 820px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links,
+      .nav-cta{
+        width:100%;
+      }
+
+      .hero{
+        padding-top:60px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .cta-wrap,
+      .quote-box,
+      .hero-card,
+      .card{
+        padding:22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-badge"></span>
+        <span>DELTA MOVE</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#lisboa">Lisboa</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contacto</a>
+      </div>
+
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="tel:+351924133226">Ligar</a>
+        <a class="btn btn-primary" href="https://wa.me/351924133226?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20de%20mudan%C3%A7a%20em%20Lisboa.">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Mudanças em Lisboa com atendimento premium</div>
+        <h1>Mudanças em Lisboa com segurança, rapidez e organização profissional</h1>
+        <p>
+          A Delta Move realiza mudanças em Lisboa com embalamento completo, desmontagem e montagem de mobiliário,
+          transporte seguro e acompanhamento profissional do início ao fim. Atendemos apartamentos, moradias,
+          escritórios e mudanças urgentes com resposta rápida.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/351924133226?text=Ol%C3%A1%2C%20quero%20pedir%20um%20or%C3%A7amento%20de%20mudan%C3%A7a%20em%20Lisboa.">Pedir orçamento</a>
+          <a class="btn btn-outline" href="tel:+351924133226">Ligar agora</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="point">
+            <strong>Atendimento rápido</strong>
+            <span>Resposta ágil para mudanças residenciais e empresariais em Lisboa.</span>
+          </div>
+          <div class="point">
+            <strong>Proteção total</strong>
+            <span>Embalamento seguro para móveis, eletrodomésticos e objetos delicados.</span>
+          </div>
+          <div class="point">
+            <strong>Serviço premium</strong>
+            <span>Organização, pontualidade e cuidado em cada etapa da mudança.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Por que escolher a Delta Move em Lisboa?</h3>
+        <p>
+          Porque uma mudança bem feita exige mais do que transporte. Exige planeamento, cuidado com os bens,
+          equipa preparada e compromisso com o cliente.
+        </p>
+
+        <div class="mini-list">
+          <div class="mini-item">
+            <div class="mini-icon"></div>
+            <div>
+              <strong>Embalamento completo</strong>
+              <p>Proteção profissional para caixas, móveis, decoração e objetos frágeis.</p>
+            </div>
+          </div>
+
+          <div class="mini-item">
+            <div class="mini-icon"></div>
+            <div>
+              <strong>Montagem e desmontagem</strong>
+              <p>Serviço pensado para facilitar todo o processo e reduzir o stress da mudança.</p>
+            </div>
+          </div>
+
+          <div class="mini-item">
+            <div class="mini-icon"></div>
+            <div>
+              <strong>Orçamento rápido</strong>
+              <p>Atendimento direto por telefone ou WhatsApp com análise rápida do serviço.</p>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" href="mailto:contato@deltamove.pt">Enviar e-mail</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="lisboa">
+    <div class="container">
+      <div class="section-title">
+        <h2>Empresa de mudanças em Lisboa</h2>
+        <p>
+          Se procura uma empresa de mudanças em Lisboa com imagem profissional, rapidez no atendimento e cuidado real
+          com os seus bens, a Delta Move é a escolha certa. Trabalhamos com mudanças locais, nacionais e apoio em mudanças
+          de maior exigência, sempre com foco em segurança, organização e pontualidade.
+        </p>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h3>Atendimento para apartamentos, moradias e escritórios</h3>
+          <p>
+            Fazemos mudanças em Lisboa para diferentes perfis de cliente, desde famílias em mudança de residência até
+            empresas que precisam de organização e agilidade no transporte de mobiliário, equipamentos e caixas.
+          </p>
+          <div class="services-list">
+            <div>Mudanças residenciais em Lisboa</div>
+            <div>Mudanças comerciais e de escritório</div>
+            <div>Transporte de móveis e eletrodomésticos</div>
+            <div>Serviço com embalamento profissional</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Processo simples, seguro e bem acompanhado</h3>
+          <p>
+            O nosso objetivo é tornar a mudança mais tranquila. Avaliamos o serviço, organizamos a logística,
+            protegemos os itens e executamos o transporte com o máximo de cuidado.
+          </p>
+          <div class="services-list">
+            <div>Planeamento do serviço</div>
+            <div>Desmontagem e montagem de mobiliário</div>
+            <div>Proteção com materiais adequados</div>
+            <div>Entrega com eficiência e responsabilidade</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Serviços de mudanças em Lisboa</h2>
+        <p>
+          A Delta Move oferece um serviço completo para quem precisa de mudar com mais segurança, menos stress
+          e melhor organização.
+        </p>
+      </div>
+
+      <div class="cards-3">
+        <div class="card">
+          <h3>Mudanças residenciais</h3>
+          <p>
+            Serviço ideal para apartamentos, moradias e condomínios, com cuidado total no manuseamento dos seus bens.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Mudanças empresariais</h3>
+          <p>
+            Soluções organizadas para escritórios, lojas e espaços comerciais, reduzindo interrupções e perdas de tempo.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Embalamento completo</h3>
+          <p>
+            Proteção profissional para móveis, utensílios, caixas, objetos frágeis e itens de maior valor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vantagens">
+    <div class="container">
+      <div class="section-title">
+        <h2>Vantagens de contratar a Delta Move</h2>
+        <p>
+          Mais do que levar caixas de um lugar para outro, entregamos um serviço bem organizado, com imagem premium,
+          contacto rápido e compromisso com a experiência do cliente.
+        </p>
+      </div>
+
+      <div class="cards-3">
+        <div class="card">
+          <h3>Pontualidade</h3>
+          <p>
+            Trabalhamos com horários definidos e resposta rápida para que a mudança aconteça sem atrasos desnecessários.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cuidado com os bens</h3>
+          <p>
+            Cada item é tratado com atenção, com foco em proteção, estabilidade no transporte e entrega segura.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Atendimento direto</h3>
+          <p>
+            Orçamentos rápidos por WhatsApp, contacto simples e comunicação clara do início ao fim do serviço.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split">
+      <div class="quote-box">
+        <h3>Peça já o seu orçamento para mudança em Lisboa</h3>
+        <p>
+          Fale agora com a Delta Move e receba um atendimento rápido para a sua mudança em Lisboa. Podemos avaliar
+          o serviço, entender a necessidade e indicar a melhor solução para o seu caso.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/351924133226?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20mudan%C3%A7a%20em%20Lisboa.">Pedir no WhatsApp</a>
+          <a class="btn btn-outline" href="mailto:contato@deltamove.pt">Enviar e-mail</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Áreas que também podemos trabalhar</h3>
+        <p style="margin-bottom:20px;">
+          Além de Lisboa, a Delta Move também pode atuar em outras zonas estratégicas e mudanças com origem
+          ou destino em diferentes regiões.
+        </p>
+        <div class="areas">
+          <div class="area">Cascais</div>
+          <div class="area">Sintra</div>
+          <div class="area">Porto</div>
+          <div class="area">Braga</div>
+          <div class="area">Viseu</div>
+          <div class="area">Algarve</div>
+          <div class="area">Madrid</div>
+          <div class="area">Barcelona</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Perguntas frequentes</h2>
+        <p>
+          Algumas dúvidas comuns de quem procura uma empresa de mudanças em Lisboa.
+        </p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Vocês fazem embalamento completo?</h3>
+          <p>
+            Sim. A Delta Move pode realizar o embalamento completo dos itens, com maior proteção e organização
+            para o transporte.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Fazem desmontagem e montagem de móveis?</h3>
+          <p>
+            Sim. Dependendo do serviço, podemos incluir desmontagem e montagem para facilitar toda a mudança.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Atendem apenas Lisboa?</h3>
+          <p>
+            Não. Lisboa é uma zona estratégica, mas ta
