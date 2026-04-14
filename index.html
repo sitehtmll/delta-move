@@ -3,25 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delta Move — Mudanças de Alto Padrão</title>
-  <meta name="description" content="Delta Move — Mudanças residenciais, comerciais e transporte com atendimento em Lisboa, Cascais, Estoril e todo Portugal." />
+  <title>Delta Move | Mudanças Premium em Portugal</title>
+  <meta
+    name="description"
+    content="Delta Move - Mudanças premium, transporte, embalamento e soluções personalizadas em Portugal. Peça o seu orçamento de forma rápida e profissional."
+  />
+  <meta name="theme-color" content="#0b5fff" />
+
   <style>
+    :root {
+      --primary: #0b5fff;
+      --primary-dark: #083ea7;
+      --primary-soft: #dbe8ff;
+      --secondary: #c9d0db;
+      --silver: #eef2f7;
+      --silver-strong: #b8c2cf;
+      --dark: #0f172a;
+      --dark-2: #111827;
+      --text: #1f2937;
+      --text-light: #5b6472;
+      --white: #ffffff;
+      --line: rgba(15, 23, 42, 0.10);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+      --shadow-strong: 0 25px 60px rgba(11, 95, 255, 0.16);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --transition: all 0.30s ease;
+      --max: 1220px;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #0f1115;
-      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(11, 95, 255, 0.08), transparent 30%),
+        radial-gradient(circle at left bottom, rgba(138, 146, 166, 0.10), transparent 25%),
+        linear-gradient(180deg, #f9fbff 0%, #eef2f7 42%, #ffffff 100%);
+      color: var(--text);
       line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      overflow-x: hidden;
     }
 
     img {
@@ -29,637 +58,2159 @@
       display: block;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
     .container {
-      width: 90%;
-      max-width: 1200px;
+      width: min(92%, var(--max));
       margin: 0 auto;
     }
 
+    .section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 50px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(11, 95, 255, 0.12), rgba(201, 208, 219, 0.45));
+      color: var(--primary-dark);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(11, 95, 255, 0.10);
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-text {
+      font-size: 1.05rem;
+      color: var(--text-light);
+    }
+
+    /* HEADER */
+    .topbar {
+      background: linear-gradient(90deg, var(--dark), #1e293b);
+      color: #dbe4f0;
+      padding: 10px 0;
+      font-size: 0.92rem;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .topbar span strong {
+      color: var(--white);
+    }
+
     header {
-      background: rgba(10, 12, 16, 0.95);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
     }
 
-    .nav {
+    .navbar {
+      height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 0;
       gap: 20px;
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: #d4af37;
-    }
-
-    .menu {
+    .brand {
       display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #ffffff, #edf3ff);
+      padding: 6px;
+      box-shadow: 0 8px 25px rgba(11, 95, 255, 0.10);
+      border: 1px solid rgba(11, 95, 255, 0.08);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-size: 1.35rem;
+      color: var(--dark);
+      letter-spacing: 0.4px;
+    }
+
+    .brand-text span {
+      font-size: 0.86rem;
+      color: var(--text-light);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
       gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
     }
 
-    .menu a {
-      color: #e8e8e8;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .menu a:hover {
-      color: #d4af37;
-    }
-
-    .btn-whatsapp {
-      background: linear-gradient(135deg, #d4af37, #b8911d);
-      color: #111;
-      padding: 12px 18px;
-      border-radius: 999px;
+    .nav-menu a {
+      font-size: 0.97rem;
       font-weight: 700;
-      transition: 0.3s;
-      display: inline-block;
+      color: var(--dark);
+      transition: var(--transition);
+      position: relative;
     }
 
-    .btn-whatsapp:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), #7db7ff);
+      transition: var(--transition);
+      border-radius: 999px;
     }
 
-    .hero {
-      min-height: 92vh;
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
       display: flex;
       align-items: center;
-      background:
-        linear-gradient(rgba(10, 12, 16, 0.72), rgba(10, 12, 16, 0.82)),
-        url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      gap: 12px;
     }
 
-    .hero-content {
-      max-width: 760px;
-      padding: 80px 0;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      background: rgba(212,175,55,0.12);
-      border: 1px solid rgba(212,175,55,0.35);
-      color: #f1d577;
-      padding: 8px 14px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
       border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 22px;
       font-weight: 700;
+      font-size: 0.96rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #4da0ff);
+      color: var(--white);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.03);
+    }
+
+    .btn-secondary {
+      background: rgba(11, 95, 255, 0.08);
+      color: var(--primary-dark);
+      border: 1px solid rgba(11, 95, 255, 0.12);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(11, 95, 255, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .btn-dark {
+      background: linear-gradient(135deg, var(--dark), #334155);
+      color: var(--white);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    }
+
+    .btn-dark:hover {
+      transform: translateY(-3px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: var(--white);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--dark);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 90px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      right: -180px;
+      top: -180px;
+      background: radial-gradient(circle, rgba(11, 95, 255, 0.16), transparent 62%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      left: -130px;
+      bottom: -100px;
+      background: radial-gradient(circle, rgba(184, 194, 207, 0.24), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-bottom: 20px;
+      backdrop-filter: blur(12px);
     }
 
     .hero h1 {
-      font-size: 58px;
-      line-height: 1.08;
-      margin-bottom: 18px;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
 
-    .hero h1 span {
-      color: #d4af37;
+    .hero h1 .gradient {
+      background: linear-gradient(90deg, var(--primary), #79b7ff 50%, #7f8896 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero p {
-      font-size: 19px;
-      color: #d9d9d9;
-      max-width: 680px;
-      margin-bottom: 30px;
+      font-size: 1.08rem;
+      color: var(--text-light);
+      max-width: 650px;
+      margin-bottom: 28px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
+      margin-bottom: 32px;
     }
 
-    .btn-outline {
-      padding: 12px 18px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-      color: #fff;
+    .hero-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 18px;
+      border-radius: 18px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .mini-card span {
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 620px;
+      border-radius: 32px;
+      padding: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(236,242,249,0.94)),
+        linear-gradient(135deg, #ffffff, #edf3ff);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(11, 95, 255, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(129, 140, 151, 0.18), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-logo-box {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(145deg, rgba(9, 17, 32, 0.96), rgba(31, 41, 55, 0.96));
+      border-radius: 26px;
+      padding: 22px;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.22);
+      overflow: hidden;
+    }
+
+    .hero-logo-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, rgba(11, 95, 255, 0.16), transparent 40%),
+        linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+      pointer-events: none;
+    }
+
+    .hero-logo-box img {
+      max-height: 200px;
+      object-fit: contain;
+      z-index: 2;
+      position: relative;
+      filter: drop-shadow(0 10px 30px rgba(11, 95, 255, 0.22));
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .floating-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .floating-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    .floating-1 {
+      top: 235px;
+      right: -18px;
+      width: 220px;
+    }
+
+    .floating-2 {
+      left: -26px;
+      bottom: 80px;
+      width: 230px;
+    }
+
+    .floating-3 {
+      right: 24px;
+      bottom: 24px;
+      width: 200px;
+    }
+
+    .hero-list {
+      position: relative;
+      z-index: 2;
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .hero-list li {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      padding: 16px 18px;
+      border-radius: 16px;
       font-weight: 700;
-      transition: 0.3s;
+      color: var(--dark);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
     }
 
-    .btn-outline:hover {
-      border-color: #d4af37;
-      color: #d4af37;
+    /* TRUST BAR */
+    .trust-bar {
+      margin-top: 18px;
     }
 
-    section {
-      padding: 90px 0;
+    .trust-wrap {
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98));
+      color: var(--white);
+      padding: 26px 28px;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.18);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 16px;
-      font-size: 40px;
-      font-weight: 800;
+    .trust-item {
+      padding: 8px 10px;
     }
 
-    .section-title span {
-      color: #d4af37;
+    .trust-item strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+      color: #ffffff;
     }
 
-    .section-subtitle {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 50px;
-      color: #c7c7c7;
-      font-size: 17px;
+    .trust-item span {
+      color: #cfd8e6;
+      font-size: 0.95rem;
     }
 
-    .grid-3 {
+    /* SERVICES */
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .card {
-      background: #171a20;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
+    .service-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 24px;
       padding: 28px;
-      transition: 0.3s;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(212,175,55,0.35);
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), #87bfff, #d1d7df);
     }
 
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 14px;
-      color: #fff;
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 70px rgba(11, 95, 255, 0.12);
     }
 
-    .card p {
-      color: #cfcfcf;
-      font-size: 16px;
-    }
-
-    .icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #d4af37, #a78015);
+    .icon-box {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(11,95,255,0.14), rgba(201,208,219,0.38));
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #111;
-      font-size: 24px;
-      font-weight: 800;
+      font-size: 1.6rem;
       margin-bottom: 18px;
+      color: var(--primary-dark);
+      border: 1px solid rgba(11, 95, 255, 0.10);
     }
 
-    .dark-section {
-      background: #121419;
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
 
-    .fleet-grid {
+    .service-card p {
+      color: var(--text-light);
+      margin-bottom: 14px;
+    }
+
+    .service-card ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-card li {
+      color: var(--dark);
+      position: relative;
+      padding-left: 18px;
+      font-size: 0.96rem;
+    }
+
+    .service-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    /* ABOUT */
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
       align-items: center;
     }
 
-    .fleet-image img {
+    .about-image {
+      position: relative;
+      min-height: 560px;
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(140deg, rgba(9, 17, 32, 0.97), rgba(26, 36, 53, 0.97)),
+        linear-gradient(135deg, #091120, #253348);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      padding: 28px;
+    }
+
+    .about-overlay-card {
+      background: rgba(255, 255, 255, 0.94);
       border-radius: 24px;
-      min-height: 420px;
-      object-fit: cover;
-      width: 100%;
+      padding: 22px;
+      box-shadow: 0 22px 55px rgba(0,0,0,0.18);
+      max-width: 320px;
+      margin-top: 250px;
+      position: relative;
+      z-index: 2;
     }
 
-    .fleet-boxes {
+    .about-overlay-card strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .about-overlay-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .about-shine {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(11,95,255,0.38), transparent 60%);
+      top: 20px;
+      right: -80px;
+      filter: blur(10px);
+    }
+
+    .about-lines {
+      position: absolute;
+      left: 28px;
+      top: 34px;
+      right: 28px;
+      height: 180px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
+    }
+
+    .about-content h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+
+    .about-points {
       display: grid;
-      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 26px 0 32px;
     }
 
-    .fleet-box {
-      background: #171a20;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-left: 4px solid #d4af37;
-      padding: 24px;
+    .point {
+      padding: 18px;
       border-radius: 18px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.05);
     }
 
-    .fleet-box h4 {
-      font-size: 22px;
-      margin-bottom: 10px;
+    .point strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--dark);
     }
 
-    .fleet-box p {
-      color: #d0d0d0;
+    .point span {
+      color: var(--text-light);
+      font-size: 0.95rem;
     }
 
-    .steps {
+    /* PROCESS */
+    .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 22px;
     }
 
-    .step {
-      background: #171a20;
-      border-radius: 22px;
-      padding: 28px;
-      border: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
+    .step-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,248,252,0.96));
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 24px;
+      padding: 30px 24px;
+      box-shadow: var(--shadow);
+      position: relative;
     }
 
     .step-number {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      margin: 0 auto 16px;
-      background: linear-gradient(135deg, #d4af37, #b8911d);
-      color: #111;
-      font-weight: 800;
-      font-size: 22px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), #8bc1ff);
+      color: #fff;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 18px;
+      box-shadow: 0 16px 30px rgba(11,95,255,0.18);
     }
 
-    .step h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
+    .step-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.18rem;
     }
 
-    .step p {
-      color: #d1d1d1;
+    .step-card p {
+      color: var(--text-light);
+      font-size: 0.96rem;
     }
 
-    .cta {
-      background:
-        linear-gradient(rgba(10, 12, 16, 0.78), rgba(10, 12, 16, 0.78)),
-        url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .cta h2 {
-      font-size: 44px;
-      margin-bottom: 16px;
-    }
-
-    .cta p {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      color: #dddddd;
-      font-size: 18px;
-    }
-
-    .contact-grid {
+    /* AREAS */
+    .areas-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
+      gap: 26px;
     }
 
-    .contact-box, .contact-info {
-      background: #171a20;
-      border: 1px solid rgba(255,255,255,0.08);
+    .areas-box,
+    .coverage-box {
+      background: rgba(255,255,255,0.92);
+      border-radius: 28px;
+      padding: 30px;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .areas-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .area-pill {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(11,95,255,0.08), rgba(201,208,219,0.24));
+      border: 1px solid rgba(11,95,255,0.08);
+      text-align: center;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .coverage-box h3,
+    .areas-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .coverage-box p,
+    .areas-box p {
+      color: var(--text-light);
+    }
+
+    .coverage-features {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .coverage-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #f8fbff;
+      border: 1px solid rgba(15,23,42,0.06);
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    /* FLEET */
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .fleet-card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(15,23,42,0.08);
       border-radius: 24px;
-      padding: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
     }
 
-    .contact-box h3,
-    .contact-info h3 {
-      font-size: 28px;
+    .fleet-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .fleet-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .fleet-card p {
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    .fleet-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .fleet-tags span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(11,95,255,0.08);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid rgba(11,95,255,0.08);
+    }
+
+    /* QUOTE */
+    .quote-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(11,95,255,0.12), transparent 26%),
+        radial-gradient(circle at bottom left, rgba(184,194,207,0.18), transparent 28%);
+      pointer-events: none;
+    }
+
+    .quote-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .quote-info {
+      background: linear-gradient(160deg, rgba(15,23,42,0.98), rgba(34,48,68,0.98));
+      color: var(--white);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: 0 30px 65px rgba(15,23,42,0.18);
+    }
+
+    .quote-info .eyebrow {
+      background: rgba(255,255,255,0.10);
+      color: #dbe7ff;
+      border-color: rgba(255,255,255,0.10);
+    }
+
+    .quote-info h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 18px;
+    }
+
+    .quote-info p {
+      color: #d5dce6;
+      margin-bottom: 18px;
+    }
+
+    .quote-advantages {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .quote-advantages div {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px;
+      padding: 16px 18px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .quote-form-box {
+      background: rgba(255,255,255,0.94);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,23,42,0.08);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .tab-btn {
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,0.08);
+      background: #f7f9fc;
+      color: var(--dark);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--primary), #6fb0ff);
+      color: var(--white);
+      border-color: transparent;
+      box-shadow: 0 12px 26px rgba(11,95,255,0.18);
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 16px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,0.12);
+      background: #ffffff;
+      color: var(--text);
+      font-size: 0.97rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(11,95,255,0.45);
+      box-shadow: 0 0 0 4px rgba(11,95,255,0.10);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .form-note {
+      margin-top: 16px;
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .contact-panel {
+      background: rgba(255,255,255,0.92);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15,23,42,0.08);
+    }
+
+    .contact-card h3,
+    .contact-panel h3 {
+      font-size: 1.65rem;
       margin-bottom: 16px;
     }
 
-    .contact-box p,
-    .contact-info p {
-      color: #d2d2d2;
-      margin-bottom: 14px;
-      font-size: 16px;
+    .contact-card p,
+    .contact-panel p {
+      color: var(--text-light);
+      margin-bottom: 18px;
     }
 
-    .contact-list {
-      display: grid;
+    .contact-items {
+      display: flex;
+      flex-direction: column;
       gap: 14px;
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
     .contact-item {
       padding: 16px 18px;
-      border-radius: 16px;
-      background: #11141a;
-      border: 1px solid rgba(255,255,255,0.06);
-      color: #f0f0f0;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(11,95,255,0.08), rgba(201,208,219,0.20));
+      border: 1px solid rgba(11,95,255,0.08);
+      font-weight: 700;
+      color: var(--dark);
     }
 
-    footer {
-      background: #0b0d11;
-      padding: 26px 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
+    .contact-panel ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
     }
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-      color: #cfcfcf;
-    }
-
-    .lang-switch {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .lang-btn {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      color: #fff;
-      font-size: 14px;
+    .contact-panel li {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #f9fbff;
+      border: 1px solid rgba(15,23,42,0.06);
+      color: var(--dark);
       font-weight: 700;
     }
 
-    .lang-btn.active {
-      background: linear-gradient(135deg, #d4af37, #b8911d);
-      color: #111;
-      border-color: transparent;
+    /* CTA FINAL */
+    .final-cta {
+      padding-top: 0;
     }
 
-    @media (max-width: 1024px) {
-      .grid-3,
-      .steps,
+    .cta-box {
+      border-radius: 34px;
+      padding: 38px;
+      background: linear-gradient(135deg, rgba(9,17,32,0.98), rgba(20,32,54,0.98));
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      box-shadow: 0 30px 70px rgba(15,23,42,0.18);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      right: -120px;
+      top: -120px;
+      background: radial-gradient(circle, rgba(11,95,255,0.25), transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
+      color: #ffffff;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-box p {
+      color: #d4dceb;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 14px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(180deg, #0f172a, #0b1220);
+      color: #d5deea;
+      padding: 38px 0 20px;
+      margin-top: 90px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 26px;
+      margin-bottom: 26px;
+    }
+
+    .footer-brand {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.08);
+      padding: 5px;
+    }
+
+    .footer-brand strong {
+      display: block;
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col li,
+    .footer-col a,
+    .footer-brand p {
+      color: #c6d1df;
+      font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding-top: 18px;
+      text-align: center;
+      color: #aeb9c8;
+      font-size: 0.92rem;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #0ea94a);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.28);
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .areas-grid,
+      .quote-grid,
       .contact-grid,
-      .fleet-grid {
+      .cta-box {
         grid-template-columns: 1fr;
       }
 
-      .hero h1 {
-        font-size: 46px;
+      .hero-panel {
+        min-height: auto;
+      }
+
+      .floating-1,
+      .floating-2,
+      .floating-3 {
+        position: static;
+        width: 100%;
+        margin-top: 14px;
+      }
+
+      .trust-wrap,
+      .process-grid,
+      .services-grid,
+      .fleet-grid,
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-cards,
+      .areas-list,
+      .contact-panel ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-menu,
+      .nav-actions .btn-secondary {
+        display: none;
+      }
+
+      .nav-menu.open {
+        display: flex;
+        position: absolute;
+        top: 84px;
+        left: 4%;
+        right: 4%;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.98);
+        box-shadow: 0 25px 60px rgba(15,23,42,0.12);
+        border: 1px solid rgba(15,23,42,0.08);
+      }
+
+      .form-grid,
+      .hero-list,
+      .about-points {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 768px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .menu {
-        gap: 14px;
+      .section {
+        padding: 72px 0;
       }
 
       .hero {
-        min-height: auto;
+        padding: 70px 0 50px;
       }
 
-      .hero h1 {
-        font-size: 36px;
+      .services-grid,
+      .process-grid,
+      .fleet-grid,
+      .trust-wrap,
+      .hero-cards,
+      .areas-list,
+      .contact-panel ul,
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero p {
-        font-size: 16px;
+      .navbar {
+        height: 76px;
       }
 
-      .section-title {
-        font-size: 31px;
+      .brand img {
+        width: 54px;
+        height: 54px;
       }
 
-      .cta h2 {
-        font-size: 32px;
+      .hero-buttons,
+      .form-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .quote-info,
+      .quote-form-box,
+      .about-image,
+      .areas-box,
+      .coverage-box,
+      .contact-card,
+      .contact-panel,
+      .cta-box {
+        padding: 24px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container nav">
-      <div class="logo">DELTA <span>MOVE</span></div>
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span>📞 <strong>924 133 226</strong></span>
+        <span>📍 Mudanças em Portugal</span>
+      </div>
+      <div class="topbar-right">
+        <span>🚚 Serviço premium</span>
+        <span>📦 Embalamento completo</span>
+        <span>⏱️ Resposta rápida</span>
+      </div>
+    </div>
+  </div>
 
-      <nav class="menu">
-        <a href="#servicos">Serviços</a>
-        <a href="#frota">Frota</a>
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#contacto">Contacto</a>
-        <div class="lang-switch">
-          <span class="lang-btn active">PT</span>
-          <span class="lang-btn">EN</span>
+  <header>
+    <div class="container navbar">
+      <a href="#inicio" class="brand">
+        <img src="logo-delta.png" alt="Logo Delta Move" />
+        <div class="brand-text">
+          <strong>Delta Move</strong>
+          <span>Mudanças Premium em Portugal</span>
         </div>
-        <a class="btn-whatsapp" href="https://wa.me/351934638049" target="_blank">WhatsApp</a>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas</a>
+        <a href="#orcamento">Orçamentos</a>
+        <a href="#contacto">Contacto</a>
       </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="mailto:contato@deltamove.pt?subject=Pedido%20de%20Informa%C3%A7%C3%B5es">E-mail</a>
+        <a class="btn btn-primary" href="#orcamento">Pedir orçamento</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-tag">Mudanças de Alto Padrão</div>
-        <h1>A excelência da sua <span>mudança</span> começa com a Delta Move</h1>
-        <p>
-          A Delta Move oferece um serviço premium de mudanças residenciais, comerciais e transportes com segurança, pontualidade e atenção total aos detalhes.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn-whatsapp" href="https://wa.me/351934638049" target="_blank">Pedir Orçamento</a>
-          <a class="btn-outline" href="#servicos">Ver Serviços</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="hero-badge">Excelência, segurança e imagem premium</div>
 
-  <section id="servicos">
-    <div class="container">
-      <h2 class="section-title">Os nossos <span>serviços</span></h2>
-      <p class="section-subtitle">
-        Soluções completas para clientes que procuram qualidade, organização e tranquilidade em cada etapa da mudança.
-      </p>
+            <h1>
+              A mudança certa para quem quer
+              <span class="gradient">serviço de alto nível</span>
+            </h1>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="icon">01</div>
-          <h3>Mudanças Residenciais</h3>
-          <p>
-            Cuidamos da sua casa com profissionalismo, proteção dos bens e transporte seguro do início ao fim.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">02</div>
-          <h3>Mudanças Comerciais</h3>
-          <p>
-            Serviço ideal para escritórios, lojas e empresas que precisam de rapidez, organização e mínimo impacto na operação.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">03</div>
-          <h3>Embalamento Completo</h3>
-          <p>
-            Embalamos móveis, eletrodomésticos e objetos com cuidado para garantir máxima proteção durante o transporte.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">04</div>
-          <h3>Montagem e Desmontagem</h3>
-          <p>
-            Fazemos a desmontagem e a montagem de mobiliário com eficiência, precisão e segurança.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">05</div>
-          <h3>Transportes Urgentes</h3>
-          <p>
-            Soluções rápidas para transportes específicos, entregas e recolhas com total responsabilidade.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">06</div>
-          <h3>Portugal e Internacional</h3>
-          <p>
-            Atendemos Lisboa, Cascais, Estoril, todo Portugal e também realizamos viagens internacionais.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="frota" class="dark-section">
-    <div class="container">
-      <h2 class="section-title">Frota e <span>estrutura</span></h2>
-      <p class="section-subtitle">
-        Equipamentos adequados, veículos preparados e equipa experiente para responder com eficiência a cada necessidade.
-      </p>
-
-      <div class="fleet-grid">
-        <div class="fleet-image">
-          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80" alt="Carrinha de mudanças Delta Move">
-        </div>
-
-        <div class="fleet-boxes">
-          <div class="fleet-box">
-            <h4>Veículos preparados</h4>
             <p>
-              Carrinhas adaptadas para transporte de mudanças, mercadorias e objetos delicados, com proteção adequada.
+              Na Delta Move, tratamos cada mudança com organização, cuidado e apresentação profissional.
+              Realizamos serviços residenciais, empresariais e personalizados, com foco em pontualidade,
+              proteção dos bens e atendimento ágil desde o primeiro contacto.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#orcamento" class="btn btn-primary">Pedir orçamento agora</a>
+              <a href="https://wa.me/351924133226?text=Olá%20Delta%20Move,%20gostaria%20de%20pedir%20um%20orçamento." class="btn btn-dark" target="_blank">Falar no WhatsApp</a>
+            </div>
+
+            <div class="hero-cards">
+              <div class="mini-card">
+                <strong>Serviço premium</strong>
+                <span>Apresentação forte e atendimento profissional.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Embalamento seguro</strong>
+                <span>Proteção pensada para móveis, objetos e volumes.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Orçamento rápido</strong>
+                <span>Envio direto para WhatsApp ou e-mail.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-panel">
+              <div class="hero-logo-box">
+                <img src="logo-delta.png" alt="Delta Move" />
+              </div>
+
+              <div class="floating-card floating-1">
+                <h4>Atendimento personalizado</h4>
+                <p>Planeamento mais claro para mudanças simples ou complexas.</p>
+              </div>
+
+              <div class="floating-card floating-2">
+                <h4>Imagem de confiança</h4>
+                <p>Ideal para clientes exigentes e serviços com padrão elevado.</p>
+              </div>
+
+              <div class="floating-card floating-3">
+                <h4>Portugal e além</h4>
+                <p>Soluções para deslocações locais, nacionais e internacionais.</p>
+              </div>
+
+              <ul class="hero-list">
+                <li>✅ Mudanças residenciais</li>
+                <li>✅ Mudanças empresariais</li>
+                <li>✅ Embalamento completo</li>
+                <li>✅ Montagem e proteção</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-bar reveal">
+          <div class="trust-wrap">
+            <div class="trust-item">
+              <strong>Organização</strong>
+              <span>Planeamento para cada etapa da mudança.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Segurança</strong>
+              <span>Cuidado com móveis, caixas e objetos delicados.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Rapidez</strong>
+              <span>Resposta ágil no pedido de orçamento.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Profissionalismo</strong>
+              <span>Presença premium do início ao fim.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="eyebrow">Os nossos serviços</span>
+          <h2 class="section-title">Soluções completas para uma mudança sem dor de cabeça</h2>
+          <p class="section-text">
+            Trabalhamos com foco em eficiência, proteção e imagem profissional para clientes particulares e empresas.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="icon-box">🚚</div>
+            <h3>Mudanças residenciais</h3>
+            <p>
+              Serviço pensado para apartamentos, moradias e mudanças familiares com atenção aos detalhes.
+            </p>
+            <ul>
+              <li>Planeamento da recolha e entrega</li>
+              <li>Transporte com cuidado reforçado</li>
+              <li>Apoio em volumes grandes e delicados</li>
+              <li>Soluções práticas e organizadas</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box">🏢</div>
+            <h3>Mudanças empresariais</h3>
+            <p>
+              Mudanças de escritórios, espaços comerciais e estruturas profissionais com máxima organização.
+            </p>
+            <ul>
+              <li>Recolha e entrega planeadas</li>
+              <li>Menor impacto na rotina da empresa</li>
+              <li>Execução com mais agilidade</li>
+              <li>Atendimento premium e direto</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box">📦</div>
+            <h3>Embalamento completo</h3>
+            <p>
+              Proteção de móveis, utensílios, objetos frágeis e volumes com materiais adequados.
+            </p>
+            <ul>
+              <li>Embalamento profissional</li>
+              <li>Maior segurança durante o transporte</li>
+              <li>Organização por setores e prioridade</li>
+              <li>Redução de riscos e danos</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box">🛠️</div>
+            <h3>Montagem e apoio logístico</h3>
+            <p>
+              Mais comodidade para clientes que desejam uma solução mais completa no processo de mudança.
+            </p>
+            <ul>
+              <li>Apoio na desmontagem e organização</li>
+              <li>Reposicionamento de volumes</li>
+              <li>Serviço prático e orientado</li>
+              <li>Maior conforto no pós-mudança</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box">🌍</div>
+            <h3>Portugal e Europa</h3>
+            <p>
+              Atendemos mudanças em várias zonas de Portugal e avaliamos deslocações mais amplas conforme o serviço.
+            </p>
+            <ul>
+              <li>Serviços locais e nacionais</li>
+              <li>Possibilidade de rotas maiores</li>
+              <li>Planeamento logístico personalizado</li>
+              <li>Orçamento conforme necessidade</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="icon-box">⭐</div>
+            <h3>Atendimento premium</h3>
+            <p>
+              A Delta Move aposta numa imagem forte, comunicação clara e experiência de confiança.
+            </p>
+            <ul>
+              <li>Resposta rápida no WhatsApp</li>
+              <li>Orçamento organizado</li>
+              <li>Atendimento com apresentação profissional</li>
+              <li>Mais confiança para o cliente final</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <div class="about-shine"></div>
+            <div class="about-lines"></div>
+
+            <div class="about-overlay-card">
+              <strong>Delta Move</strong>
+              <p>
+                Uma marca pensada para clientes que valorizam qualidade, segurança e uma apresentação mais premium.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-content reveal">
+            <span class="eyebrow">Sobre a Delta Move</span>
+            <h2>Uma empresa preparada para transmitir confiança desde o primeiro contacto</h2>
+
+            <p>
+              A Delta Move foi criada para oferecer um serviço de mudanças com imagem forte, cuidado real com os bens
+              transportados e comunicação profissional. O nosso objetivo é passar segurança em cada etapa.
+            </p>
+
+            <p>
+              Mais do que transportar volumes, queremos proporcionar tranquilidade. Por isso, cada pedido é tratado
+              com organização, clareza e foco em entregar uma experiência superior.
+            </p>
+
+            <div class="about-points">
+              <div class="point">
+                <strong>Imagem premium</strong>
+                <span>Visual profissional, presença de marca e comunicação mais elegante.</span>
+              </div>
+              <div class="point">
+                <strong>Cuidado reforçado</strong>
+                <span>Mais atenção na proteção dos objetos e no planeamento do serviço.</span>
+              </div>
+              <div class="point">
+                <strong>Agilidade no orçamento</strong>
+                <span>Formulário pronto para cair no WhatsApp e no e-mail com os dados organizados.</span>
+              </div>
+              <div class="point">
+                <strong>Atendimento direto</strong>
+                <span>Mais rapidez para responder, alinhar e fechar serviços.</span>
+              </div>
+            </div>
+
+            <a href="#orcamento" class="btn btn-primary">Solicitar orçamento</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="eyebrow">Como funciona</span>
+          <h2 class="section-title">Processo simples, profissional e orientado para fechar serviço</h2>
+          <p class="section-text">
+            Um fluxo pensado para facilitar a vida do cliente e aumentar a confiança logo no primeiro pedido.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step-card reveal">
+            <div class="step-number">01</div>
+            <h3>Pedido de orçamento</h3>
+            <p>
+              O cliente preenche os dados principais da mudança de forma rápida e organizada.
             </p>
           </div>
 
-          <div class="fleet-box">
-            <h4>Equipa especializada</h4>
+          <div class="step-card reveal">
+            <div class="step-number">02</div>
+            <h3>Análise do serviço</h3>
             <p>
-              Profissionais treinados para lidar com mudanças de pequeno, médio e grande porte.
+              Avaliamos origem, destino, tipo de mudança, data e necessidades específicas.
             </p>
           </div>
 
-          <div class="fleet-box">
-            <h4>Atendimento personalizado</h4>
+          <div class="step-card reveal">
+            <div class="step-number">03</div>
+            <h3>Confirmação e planeamento</h3>
             <p>
-              Cada cliente recebe um atendimento ajustado ao seu tipo de mudança, volume e destino.
+              O serviço é alinhado com clareza para garantir uma execução mais eficiente.
+            </p>
+          </div>
+
+          <div class="step-card reveal">
+            <div class="step-number">04</div>
+            <h3>Execução premium</h3>
+            <p>
+              Realizamos a mudança com foco em cuidado, pontualidade e apresentação profissional.
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="como-funciona">
-    <div class="container">
-      <h2 class="section-title">Como <span>funciona</span></h2>
-      <p class="section-subtitle">
-        Um processo simples, claro e profissional para garantir tranquilidade em toda a sua mudança.
-      </p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Contacto</h3>
-          <p>Fale connosco pelo WhatsApp e envie as informações da mudança.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Avaliação</h3>
-          <p>Analisamos volume, local, acessos e necessidades específicas.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Orçamento</h3>
-          <p>Recebe um orçamento claro, justo e ajustado ao seu serviço.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">4</div>
-          <h3>Execução</h3>
-          <p>Realizamos a mudança com cuidado, pontualidade e organização.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container">
-      <h2>Pronto para mudar com segurança e confiança?</h2>
-      <p>
-        A Delta Move está preparada para oferecer um serviço elegante, eficiente e sem complicações para a sua mudança ou transporte.
-      </p>
-      <a class="btn-whatsapp" href="https://wa.me/351934638049" target="_blank">Falar no WhatsApp</a>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <div class="container">
-      <h2 class="section-title">Entre em <span>contacto</span></h2>
-      <p class="section-subtitle">
-        Atendimento rápido para pedidos de orçamento, dúvidas e marcações.
-      </p>
-
-      <div class="contact-grid">
-        <div class="contact-box">
-          <h3>Delta Move</h3>
-          <p>
-            Serviço premium de mudanças e transportes, com foco em qualidade, cuidado e compromisso com cada cliente.
+    <section class="section" id="areas">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="eyebrow">Áreas de atendimento</span>
+          <h2 class="section-title">Atendimento em Portugal com foco em serviços bem apresentados</h2>
+          <p class="section-text">
+            A Delta Move atua em diversas regiões e avalia cada serviço com atenção ao percurso e à necessidade do cliente.
           </p>
-          <p>
-            Trabalhamos com mudanças residenciais, comerciais, embalamento, desmontagem, montagem e transportes em geral.
-          </p>
-          <a class="btn-whatsapp" href="https://wa.me/351934638049" target="_blank">Pedir orçamento agora</a>
         </div>
 
-        <div class="contact-info">
-          <h3>Informações</h3>
-          <div class="contact-list">
-            <div class="contact-item"><strong>Telefone:</strong> +351 934 638 049</div>
-            <div class="contact-item"><strong>WhatsApp:</strong> +351 934 638 049</div>
-            <div class="contact-item"><strong>Zona de atuação:</strong> Lisboa, Cascais, Estoril e todo Portugal</div>
-            <div class="contact-item"><strong>Serviços:</strong> Mudanças, transportes, embalamento e montagem</div>
+        <div class="areas-grid">
+          <div class="areas-box reveal">
+            <h3>Zonas com maior atuação</h3>
+            <p>
+              Trabalhamos com presença forte em áreas urbanas e de maior procura, mantendo padrão visual e atendimento premium.
+            </p>
+
+            <div class="areas-list">
+              <div class="area-pill">Lisboa</div>
+              <div class="area-pill">Cascais</div>
+              <div class="area-pill">Estoril</div>
+              <div class="area-pill">Sintra</div>
+              <div class="area-pill">Oeiras</div>
+              <div class="area-pill">Margem Sul</div>
+              <div class="area-pill">Setúbal</div>
+              <div class="area-pill">Almada</div>
+              <div class="area-pill">Portugal</div>
+            </div>
+          </div>
+
+          <div class="coverage-box reveal">
+            <h3>Serviços adaptados à rota</h3>
+            <p>
+              Cada mudança é analisada com base na distância, acesso, tipo de imóvel, quantidade de volumes e necessidade de embalamento.
+            </p>
+
+            <div class="coverage-features">
+              <div class="coverage-item">✔ Orçamentos personalizados conforme o serviço</div>
+              <div class="coverage-item">✔ Planeamento de recolha e entrega</div>
+              <div class="coverage-item">✔ Atendimento rápido pelo WhatsApp</div>
+              <div class="coverage-item">✔ Possibilidade de serviços maiores sob consulta</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="eyebrow">Estrutura e capacidade</span>
+          <h2 class="section-title">Preparados para mudanças simples, completas e de maior exigência</h2>
+          <p class="section-text">
+            Uma apresentação profissional transmite segurança, e a estrutura certa ajuda a fechar serviços melhores.
+          </p>
+        </div>
+
+        <div class="fleet-grid">
+          <div class="fleet-card reveal">
+            <h3>Mudanças de apartamento</h3>
+            <p>
+              Solução orientada para serviços rápidos e organizados, com atenção a prédios, elevadores e acessos.
+            </p>
+            <div class="fleet-tags">
+              <span>Residencial</span>
+              <span>Organizado</span>
+              <span>Proteção</span>
+            </div>
+          </div>
+
+          <div class="fleet-card reveal">
+            <h3>Mudanças completas</h3>
+            <p>
+              Ideal para clientes que precisam de recolha, transporte, embalamento e maior apoio no processo.
+            </p>
+            <div class="fleet-tags">
+              <span>Embalamento</span>
+              <span>Logística</span>
+              <span>Premium</span>
+            </div>
+          </div>
+
+          <div class="fleet-card reveal">
+            <h3>Mudanças empresariais</h3>
+            <p>
+              Serviço voltado para escritórios e espaços profissionais que precisam de imagem séria e execução cuidada.
+            </p>
+            <div class="fleet-tags">
+              <span>Empresas</span>
+              <span>Planeamento</span>
+              <span>Agilidade</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-section" id="orcamento">
+      <div class="container">
+        <div class="quote-grid">
+          <div class="quote-info reveal">
+            <span class="eyebrow">Página de orçamentos</span>
+            <h2>Peça o seu orçamento com os dados já organizados</h2>
+            <p>
+              Preencha as informações da mudança. Depois, pode enviar tudo diretamente pelo WhatsApp
+              ou abrir um e-mail já montado com os dados do cliente, origem, destino e detalhes do serviço.
+            </p>
+
+            <p>
+              Isso deixa o atendimento mais profissional, acelera a resposta e ajuda a fechar mais serviços.
+            </p>
+
+            <div class="quote-advantages">
+              <div>📲 Envio direto para WhatsApp</div>
+              <div>✉️ Abertura automática de e-mail com assunto e corpo prontos</div>
+              <div>📍 Origem e destino já organizados</div>
+              <div>🗓️ Data, tipo de serviço e observações incluídos</div>
+            </div>
+          </div>
+
+          <div class="quote-form-box reveal">
+            <div class="tabs">
+              <button class="tab-btn active" data-tab="tab1">1. Dados do cliente</button>
+              <button class="tab-btn" data-tab="tab2">2. Dados da mudança</button>
+              <button class="tab-btn" data-tab="tab3">3. Enviar pedido</button>
+            </div>
+
+            <form id="quoteForm">
+              <div class="tab-panel active" id="tab1">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite o nome do cliente" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Ex.: 912 345 678" required />
+                  </div>
+
+                  <div class="form-group full">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite o e-mail do cliente" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab2">
+                <div class="form-grid">
+                  <div class="form-group full">
+                    <label for="origem">Morada de origem</label>
+                    <input type="text" id="origem" name="origem" placeholder="Ex.: Rua..., Lisboa" required />
+                  </div>
+
+                  <div class="form-group full">
+                    <label for="destino">Morada de destino</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ex.: Avenida..., Cascais" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="dataMudanca">Data da mudança</label>
+                    <input type="date" id="dataMudanca" name="dataMudanca" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tipoServico">Tipo de serviço</label>
+                    <select id="tipoServico" name="tipoServico">
+                      <option value="Mudança residencial">Mudança residencial</option>
+                      <option value="Mudança empresarial">Mudança empresarial</option>
+                      <option value="Mudança com embalamento">Mudança com embalamento</option>
+                      <option value="Transporte de volumes">Transporte de volumes</option>
+                      <option value="Serviço personalizado">Serviço personalizado</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group full">
+                    <label for="observacoes">Observações</label>
+                    <textarea id="observacoes" name="observacoes" placeholder="Ex.: andar, elevador, quantidade de móveis, desmontagem, objetos frágeis, etc."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab3">
+                <div class="form-grid">
+                  <div class="form-group full">
+                    <label>Revisão rápida</label>
+                    <textarea id="resumoPreview" readonly placeholder="O resumo do pedido vai aparecer aqui automaticamente."></textarea>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" class="btn btn-primary" id="btnWhatsApp">Enviar para WhatsApp</button>
+                  <button type="button" class="btn btn-secondary" id="btnEmail">Enviar por e-mail</button>
+                  <button type="button" class="btn btn-dark" id="btnCopiar">Copiar texto</button>
+                </div>
+
+                <p class="form-note">
+                  O WhatsApp vai abrir com a mensagem pronta. O e-mail também será aberto com assunto e corpo já preenchidos.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="section-title-wrap reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2 class="section-title">Atendimento rápido para quem quer fechar com mais confiança</h2>
+          <p class="section-text">
+            Entre em contacto para alinhar o seu serviço, tirar dúvidas ou solicitar um orçamento personalizado.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>Fale com a Delta Move</h3>
+            <p>
+              Atendimento pensado para ser rápido, claro e profissional, com prioridade para pedidos de orçamento e alinhamento de serviços.
+            </p>
+
+            <div class="contact-items">
+              <div class="contact-item">📞 Telefone / WhatsApp: 924 133 226</div>
+              <div class="contact-item">✉️ E-mail: contato@deltamove.pt</div>
+              <div class="contact-item">📍 Atendimento em Portugal</div>
+            </div>
+          </div>
+
+          <div class="contact-panel reveal">
+            <h3>Porque escolher a Delta Move?</h3>
+            <p>
+              Uma marca forte ajuda o cliente a confiar mais, e um atendimento bem organizado ajuda a converter melhor.
+            </p>
+
+            <ul>
+              <li>✅ Visual premium</li>
+              <li>✅ Atendimento rápido</li>
+              <li>✅ Comunicação clara</li>
+              <li>✅ Estrutura profissional</li>
+              <li>✅ Orçamento inteligente</li>
+              <li>✅ Mais confiança para vender</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>Pronto para pedir o seu orçamento?</h2>
+            <p>
+              Preencha os dados da sua mudança e fale agora com a Delta Move pelo WhatsApp ou por e-mail, com tudo já organizado.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="#orcamento" class="btn btn-primary">Pedir orçamento</a>
+            <a href="https://wa.me/351924133226?text=Olá%20Delta%20Move,%20gostaria%20de%20pedir%20um%20orçamento." target="_blank" class="btn btn-secondary">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div class="container footer-content">
-      <div>© 2026 Delta Move. Todos os direitos reservados.</div>
-      <div>Site profissional de mudanças e transportes</div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="logo-delta.png" alt="Delta Move" />
+            <div>
+              <strong>Delta Move</strong>
+              <p>
+                Mudanças premium com imagem forte, atendimento profissional e soluções práticas para clientes em Portugal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#orcamento">Orçamentos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li>Mudanças residenciais</li>
+            <li>Mudanças empresariais</li>
+            <li>Embalamento completo</li>
+            <li>Transporte personalizado</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contactos</h4>
+          <ul>
+            <li>Telefone: 924 133 226</li>
+            <li>E-mail: contato@deltamove.pt</li>
+            <li>Portugal</li>
+            <li>Atendimento com rapidez</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Delta Move. Todos os direitos reservados.
+      </div>
     </div>
   </footer>
 
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/351924133226?text=Olá%20Delta%20Move,%20gostaria%20de%20pedir%20um%20orçamento."
+    target="_blank"
+    aria-label="WhatsApp"
+  >💬</a>
+
+  <script>
+    // MENU MOBILE
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+      });
+    }
+
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+      });
+    });
+
+    // ANIMAÇÃO DE ENTRADA
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.16 });
+
+    reveals.forEach(item => observer.observe(item));
+
+    // TABS DO ORÇAMENTO
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabPanels = document.querySelectorAll(".tab-panel");
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const target = button.getAttribute("data-tab");
+
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        tabPanels.forEach(panel => panel.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById(target).classList.add("active");
+
+        atualizarResumo();
+      });
+    });
+
+    // FORMULÁRIO
+    const form = document.getElementById("quoteForm");
+    const resumoPreview = document.getElementById("resumoPreview");
+    const btnWhatsApp = document.getElementById("btnWhatsApp");
+    const btnEmail = document.getElementById("btnEmail");
+    const btnCopiar = document.getElementById("btnCopiar");
+
+    const campos = [
+      "nome",
+      "telefone",
+      "email",
+      "origem",
+      "destino",
+      "dataMudanca",
+      "tipoServico",
+      "observacoes"
+    ];
+
+    campos.forEach(id => {
+      const campo = document.getElementById(id);
+      if (campo) {
+        campo.addEventListener("input", atualizarResumo);
+        campo.addEventListener("change", atualizarResumo);
+      }
+    });
+
+    function valor(id) {
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+
+    function formatarData(data) {
+      if (!data) return "Não informada";
+      const partes = data.split("-");
+      if (partes.length !== 3) return data;
+      return `${partes[2]}/${partes[1]}/${partes[0]}`;
+    }
+
+    function gerarMensagem() {
+      const nome = valor("nome") || "Não informado";
+      const telefone = valor("telefone") || "Não informado";
+      const email = valor("email") || "Não informado";
+      const origem = valor("origem") || "Não informada";
+      const destino = valor("destino") || "Não informada";
+      const dataMudanca = formatarData(valor("dataMudanca"));
+      const tipoServico = valor("tipoServico") || "Não informado";
+      const observacoes = valor("observacoes") || "Sem observações";
+
+      return (
+`Olá, Delta Move.
+Gostaria de solicitar um orçamento.
+
+Nome: ${nome}
+Telefone: ${telefone}
+E-mail: ${email}
+Morada de origem: ${origem}
+Morada de destino: ${destino}
+Data da mudança: ${dataMudanca}
+Tipo de serviço: ${tipoServico}
+Observações: ${observacoes}`
+      );
+    }
+
+    function atualizarResumo() {
+      resumoPreview.value = gerarMensagem();
+    }
+
+    atualizarResumo();
+
+    btnWhatsApp.addEventListener("click", () => {
+      const nome = valor("nome");
+      const telefone = valor("telefone");
+      const origem = valor("origem");
+      const destino = valor("destino");
+
+      if (!nome || !telefone || !origem || !destino) {
+        alert("Preencha pelo menos Nome, Telefone, Morada de origem e Morada de destino.");
+        return;
+      }
+
+      const mensagem = encodeURIComponent(gerarMensagem());
+      const numero = "351924133226";
+      window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+    });
+
+    btnEmail.addEventListener("click", () => {
+      const nome = valor("nome");
+      const telefone = valor("telefone");
+      const origem = valor("origem");
+      const destino = valor("destino");
+
+      if (!nome || !telefone || !origem || !destino) {
+        alert("Preencha pelo menos Nome, Telefone, Morada de origem e Morada de destino.");
+        return;
+      }
+
+      const assunto = encodeURIComponent("Pedido de orçamento - Delta Move");
+      const corpo = encodeURIComponent(gerarMensagem());
+      window.location.href = `mailto:contato@deltamove.pt?subject=${assunto}&body=${corpo}`;
+    });
+
+    btnCopiar.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(gerarMensagem());
+        alert("Texto copiado com sucesso.");
+      } catch (error) {
+        alert("Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.");
+      }
+    });
+  </script>
 </body>
 </html>
