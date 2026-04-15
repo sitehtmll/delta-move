@@ -904,4 +904,874 @@
       border: 1px solid rgba(15,23,42,0.08);
       border-radius: 28px;
       padding: 34px;
-      box-shad
+      box-shadow: var(--shadow);
+    }
+
+    .quote-content p {
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    .quote-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .quote-list li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    .quote-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .quote-box form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .quote-box input,
+    .quote-box select,
+    .quote-box textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      outline: none;
+      font-size: 0.98rem;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .quote-box textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .quote-box input:focus,
+    .quote-box select:focus,
+    .quote-box textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(11,95,255,0.10);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .stars {
+      color: #f4b400;
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-card p {
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      color: var(--dark);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .contact-card,
+    .feedback-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p,
+    .feedback-card p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .contact-list li {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #f8fbff;
+      border: 1px solid rgba(15,23,42,0.06);
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .feedback-card form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .feedback-card input,
+    .feedback-card select,
+    .feedback-card textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,0.12);
+      outline: none;
+      background: #fff;
+      font-size: 0.98rem;
+    }
+
+    .feedback-card textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    footer {
+      background: linear-gradient(180deg, #0f172a, #111827);
+      color: #d7deea;
+      padding: 70px 0 28px;
+      margin-top: 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand img {
+      width: 120px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p,
+    .footer-col a,
+    .footer-col li {
+      color: #c8d1df;
+      font-size: 0.95rem;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: #b6c2d4;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      box-shadow: 0 18px 35px rgba(37, 211, 102, 0.35);
+      z-index: 1001;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .areas-grid,
+      .quote-grid,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .fleet-grid,
+      .testimonials-grid,
+      .process-grid,
+      .trust-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-cards,
+      .hero-list,
+      .areas-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .floating-1,
+      .floating-2,
+      .floating-3 {
+        position: static;
+        width: 100%;
+        margin-top: 14px;
+      }
+
+      .hero-panel {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-menu,
+      .nav-actions .btn-secondary {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .services-grid,
+      .fleet-grid,
+      .testimonials-grid,
+      .process-grid,
+      .trust-wrap,
+      .hero-cards,
+      .hero-list,
+      .areas-list,
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .brand img {
+        width: 74px;
+        height: 74px;
+      }
+
+      .navbar {
+        height: 86px;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand-text strong {
+        font-size: 1.15rem;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .quote-content,
+      .quote-box,
+      .contact-card,
+      .feedback-card,
+      .areas-box,
+      .coverage-box,
+      .service-card,
+      .testimonial-card,
+      .fleet-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <span><strong>Atendimento:</strong> Segunda a Sábado</span>
+        <span><strong>Serviço:</strong> Portugal e Europa</span>
+      </div>
+      <div class="topbar-right">
+        <span><strong>WhatsApp:</strong> +351 924 133 226</span>
+        <span><strong>Email:</strong> contato@deltamove.pt</span>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <img src="delta-logo.png" alt="Delta Move">
+        <div class="brand-text">
+          <strong>Delta Move</strong>
+          <span>Mudanças Premium</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#cobertura">Cobertura</a>
+        <a href="#frota">Frota</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="#contactos">Contactos</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="#feedback">Elogios / Reclamações</a>
+        <a class="btn btn-primary" href="https://wa.me/351924133226" target="_blank">Pedir orçamento</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Mudanças com imagem premium, segurança e organização</div>
+        <h1>
+          A sua mudança com o padrão <span class="gradient">Delta Move</span>
+        </h1>
+        <p>
+          Soluções completas em mudanças residenciais, empresariais, embalamento, desmontagem,
+          montagem e transporte profissional em Lisboa, Cascais, Sintra, Margem Sul, Porto e em
+          todo Portugal e Europa.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="https://wa.me/351924133226" target="_blank">Pedir orçamento no WhatsApp</a>
+          <a class="btn btn-dark" href="#servicos">Ver serviços</a>
+        </div>
+
+        <div class="hero-cards">
+          <div class="mini-card">
+            <strong>+100%</strong>
+            <span>Foco em atendimento premium</span>
+          </div>
+          <div class="mini-card">
+            <strong>Portugal & Europa</strong>
+            <span>Operação nacional e internacional</span>
+          </div>
+          <div class="mini-card">
+            <strong>Embalamento</strong>
+            <span>Proteção completa dos seus bens</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-panel">
+          <div class="hero-logo-box">
+            <img src="delta-logo.png" alt="Logo Delta Move">
+          </div>
+
+          <div class="floating-card floating-1">
+            <h4>Equipa profissional</h4>
+            <p>Atendimento pontual, organização e cuidado em cada detalhe da mudança.</p>
+          </div>
+
+          <div class="floating-card floating-2">
+            <h4>Embalamento seguro</h4>
+            <p>Película, bolha, mantas, proteção de móveis e soluções personalizadas.</p>
+          </div>
+
+          <div class="floating-card floating-3">
+            <h4>Cobertura ampla</h4>
+            <p>Lisboa, Cascais, Sintra, Margem Sul, Porto e rotas internacionais.</p>
+          </div>
+
+          <ul class="hero-list">
+            <li>Mudanças residenciais</li>
+            <li>Mudanças empresariais</li>
+            <li>Desmontagem e montagem</li>
+            <li>Transporte premium</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container trust-bar">
+      <div class="trust-wrap">
+        <div class="trust-item">
+          <strong>Atendimento rápido</strong>
+          <span>Resposta prática e profissional no WhatsApp</span>
+        </div>
+        <div class="trust-item">
+          <strong>Planeamento</strong>
+          <span>Organização antes, durante e depois da mudança</span>
+        </div>
+        <div class="trust-item">
+          <strong>Segurança</strong>
+          <span>Proteção dos itens com materiais adequados</span>
+        </div>
+        <div class="trust-item">
+          <strong>Imagem premium</strong>
+          <span>Marca forte para clientes exigentes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="eyebrow">Serviços</div>
+        <h2 class="section-title">Tudo o que precisa para uma mudança completa</h2>
+        <p class="section-text">
+          A Delta Move oferece soluções pensadas para clientes particulares e empresas que procuram
+          agilidade, cuidado e apresentação premium.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon-box">🚚</div>
+          <h3>Mudanças residenciais</h3>
+          <p>Serviço organizado para apartamentos, moradias e mudanças locais ou de longa distância.</p>
+          <ul>
+            <li>Transporte seguro</li>
+            <li>Equipa preparada</li>
+            <li>Planeamento por etapas</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-box">📦</div>
+          <h3>Embalamento completo</h3>
+          <p>Proteção profissional para móveis, eletrodomésticos, objetos frágeis e decoração.</p>
+          <ul>
+            <li>Película e plástico bolha</li>
+            <li>Mantas de proteção</li>
+            <li>Identificação de volumes</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-box">🏢</div>
+          <h3>Mudanças empresariais</h3>
+          <p>Operação para escritórios, lojas e empresas com foco em agilidade e menor interrupção.</p>
+          <ul>
+            <li>Planeamento logístico</li>
+            <li>Transporte de equipamentos</li>
+            <li>Organização por setores</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-box">🪛</div>
+          <h3>Desmontagem e montagem</h3>
+          <p>Serviço pensado para facilitar todo o processo, do início ao fim.</p>
+          <ul>
+            <li>Móveis desmontáveis</li>
+            <li>Reorganização no destino</li>
+            <li>Mais praticidade para o cliente</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-box">🌍</div>
+          <h3>Portugal e Europa</h3>
+          <p>Atuação em várias cidades e possibilidade de rotas nacionais e internacionais.</p>
+          <ul>
+            <li>Lisboa, Cascais e Sintra</li>
+            <li>Margem Sul, Porto e Braga</li>
+            <li>Outros destinos sob orçamento</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="icon-box">⭐</div>
+          <h3>Serviço premium</h3>
+          <p>Apresentação moderna, comunicação clara e experiência profissional para clientes exigentes.</p>
+          <ul>
+            <li>Imagem forte da marca</li>
+            <li>Atendimento ágil</li>
+            <li>Solução personalizada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container about-grid">
+      <div class="about-image">
+        <div class="about-shine"></div>
+        <div class="about-lines"></div>
+        <div class="about-overlay-card">
+          <strong>Compromisso com qualidade</strong>
+          <p>
+            A Delta Move trabalha para entregar confiança, segurança e organização em cada mudança,
+            com foco numa experiência premium do primeiro contacto até à entrega final.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="eyebrow">Sobre a Delta Move</div>
+        <h2>Uma marca criada para transmitir segurança e profissionalismo</h2>
+        <p>
+          A Delta Move foi pensada para clientes que valorizam uma empresa bem apresentada, cuidadosa
+          e organizada. O nosso objetivo é tornar cada mudança mais simples, segura e eficiente.
+        </p>
+        <p>
+          Trabalhamos com foco em atendimento próximo, proteção dos bens transportados e um processo
+          claro, desde o pedido de orçamento até ao momento da entrega.
+        </p>
+
+        <div class="about-points">
+          <div class="point">
+            <strong>Planeamento</strong>
+            <span>Organização completa para evitar imprevistos e dar mais tranquilidade.</span>
+          </div>
+          <div class="point">
+            <strong>Imagem premium</strong>
+            <span>Visual profissional e abordagem moderna para clientes exigentes.</span>
+          </div>
+          <div class="point">
+            <strong>Confiança</strong>
+            <span>Comunicação clara e acompanhamento em todas as etapas do serviço.</span>
+          </div>
+          <div class="point">
+            <strong>Flexibilidade</strong>
+            <span>Soluções adaptadas a mudanças pequenas, médias ou grandes.</span>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" href="#orcamento">Solicitar orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="eyebrow">Processo</div>
+        <h2 class="section-title">Como funciona o nosso atendimento</h2>
+        <p class="section-text">
+          Um processo simples, profissional e pensado para facilitar a vida do cliente.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Pedido de contacto</h3>
+          <p>O cliente entra em contacto pelo WhatsApp, telefone ou formulário do site.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Análise do serviço</h3>
+          <p>Avaliamos volume, distância, acessos, embalamento e necessidades específicas.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Orçamento</h3>
+          <p>Enviamos proposta clara, organizada e alinhada com o tipo de serviço pedido.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Execução</h3>
+          <p>Realizamos a mudança com cuidado, pontualidade e atenção aos detalhes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cobertura">
+    <div class="container areas-grid">
+      <div class="areas-box">
+        <div class="eyebrow">Cobertura</div>
+        <h3>Zonas de atuação</h3>
+        <p>
+          Trabalhamos com foco em Portugal, incluindo áreas estratégicas e cidades com alta procura,
+          além de rotas para outros destinos sob consulta.
+        </p>
+
+        <div class="areas-list">
+          <div class="area-pill">Lisboa</div>
+          <div class="area-pill">Cascais</div>
+          <div class="area-pill">Sintra</div>
+          <div class="area-pill">Almada</div>
+          <div class="area-pill">Seixal</div>
+          <div class="area-pill">Barreiro</div>
+          <div class="area-pill">Setúbal</div>
+          <div class="area-pill">Porto</div>
+          <div class="area-pill">Braga</div>
+        </div>
+      </div>
+
+      <div class="coverage-box">
+        <div class="eyebrow">Destaques</div>
+        <h3>Serviço flexível e personalizado</h3>
+        <p>
+          Cada mudança é tratada de forma individual, com atenção às necessidades reais de cada cliente.
+        </p>
+
+        <div class="coverage-features">
+          <div class="coverage-item">Mudanças locais e de longa distância</div>
+          <div class="coverage-item">Atendimento para particulares e empresas</div>
+          <div class="coverage-item">Cobertura nacional e possibilidade de Europa</div>
+          <div class="coverage-item">Orçamento adaptado ao serviço</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="frota">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="eyebrow">Frota & Operação</div>
+        <h2 class="section-title">Estrutura para responder com qualidade</h2>
+        <p class="section-text">
+          Organização, equipa e transporte alinhados com uma imagem forte e profissional.
+        </p>
+      </div>
+
+      <div class="fleet-grid">
+        <div class="fleet-card">
+          <h3>Viaturas adequadas</h3>
+          <p>Preparadas para transporte de móveis, caixas, eletrodomésticos e cargas diversas.</p>
+          <div class="fleet-tags">
+            <span>Carga protegida</span>
+            <span>Rotas planeadas</span>
+            <span>Mais eficiência</span>
+          </div>
+        </div>
+
+        <div class="fleet-card">
+          <h3>Materiais de proteção</h3>
+          <p>Utilização de materiais que ajudam a reduzir riscos e protegem os bens durante o transporte.</p>
+          <div class="fleet-tags">
+            <span>Plástico bolha</span>
+            <span>Película</span>
+            <span>Mantas</span>
+          </div>
+        </div>
+
+        <div class="fleet-card">
+          <h3>Equipa orientada</h3>
+          <p>Atendimento focado em cuidado, organização e imagem premium perante o cliente.</p>
+          <div class="fleet-tags">
+            <span>Pontualidade</span>
+            <span>Organização</span>
+            <span>Atendimento premium</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quote-section" id="orcamento">
+    <div class="container quote-grid">
+      <div class="quote-content">
+        <div class="eyebrow">Orçamento</div>
+        <h2 class="section-title">Peça a sua proposta de forma rápida</h2>
+        <p>
+          Envie os detalhes do seu serviço e receba uma resposta clara e profissional. Quanto mais
+          informação enviar, mais preciso será o seu orçamento.
+        </p>
+
+        <ul class="quote-list">
+          <li>Mudanças residenciais e empresariais</li>
+          <li>Transporte com ou sem embalamento</li>
+          <li>Serviço adaptado ao volume e distância</li>
+          <li>Atendimento rápido por WhatsApp</li>
+        </ul>
+      </div>
+
+      <div class="quote-box">
+        <form>
+          <input type="text" placeholder="Seu nome" />
+          <input type="tel" placeholder="Seu telefone" />
+          <input type="email" placeholder="Seu email" />
+          <select>
+            <option>Tipo de serviço</option>
+            <option>Mudança residencial</option>
+            <option>Mudança empresarial</option>
+            <option>Embalamento</option>
+            <option>Transporte</option>
+          </select>
+          <textarea placeholder="Explique o que precisa: origem, destino, volume, piso, elevador, datas e outros detalhes."></textarea>
+          <button type="submit" class="btn btn-primary">Enviar pedido</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="eyebrow">Avaliações</div>
+        <h2 class="section-title">O que queremos transmitir ao cliente</h2>
+        <p class="section-text">
+          Uma marca premium precisa mostrar confiança, organização e boa comunicação em cada detalhe.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>Atendimento profissional, organização excelente e uma equipa muito cuidadosa.</p>
+          <strong>Cliente Particular</strong>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>Imagem séria, contacto rápido e proposta muito clara. Passa bastante confiança.</p>
+          <strong>Cliente Empresarial</strong>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>Uma marca forte, moderna e com apresentação premium do início ao fim.</p>
+          <strong>Cliente Premium</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contactos">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <div class="eyebrow">Contactos</div>
+        <h2 class="section-title">Fale com a Delta Move</h2>
+        <p>
+          Entre em contacto para tirar dúvidas, pedir visita, solicitar orçamento ou falar sobre a sua mudança.
+        </p>
+
+        <ul class="contact-list">
+          <li>📞 Telefone / WhatsApp: +351 924 133 226</li>
+          <li>📧 Email: contato@deltamove.pt</li>
+          <li>📍 Área de atuação: Portugal e Europa</li>
+          <li>🕒 Atendimento: Segunda a Sábado</li>
+        </ul>
+      </div>
+
+      <div class="feedback-card" id="feedback">
+        <div class="eyebrow">Elogios e Reclamações</div>
+        <h2 class="section-title">Espaço para feedback</h2>
+        <p>
+          O cliente pode usar este espaço para enviar elogios, sugestões, reclamações ou pedidos de apoio.
+        </p>
+
+        <form>
+          <input type="text" placeholder="Seu nome" />
+          <input type="email" placeholder="Seu email" />
+          <select>
+            <option>Tipo de mensagem</option>
+            <option>Elogio</option>
+            <option>Sugestão</option>
+            <option>Reclamação</option>
+            <option>Dúvida</option>
+          </select>
+          <textarea placeholder="Escreva aqui a sua mensagem."></textarea>
+          <button type="submit" class="btn btn-dark">Enviar feedback</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="delta-logo.png" alt="Delta Move">
+          <p>
+            Delta Move é uma marca pensada para mudanças com imagem premium, serviço organizado,
+            atendimento profissional e atuação em Portugal e Europa.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#frota">Frota</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Mudanças residenciais</a></li>
+            <li><a href="#servicos">Mudanças empresariais</a></li>
+            <li><a href="#servicos">Embalamento</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contactos</h4>
+          <ul>
+            <li>+351 924 133 226</li>
+            <li>contato@deltamove.pt</li>
+            <li>Portugal e Europa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Delta Move. Todos os direitos reservados.</span>
+        <span>Site com apresentação premium e foco em conversão.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/351924133226" target="_blank" aria-label="WhatsApp">✆</a>
+
+</body>
+</html>
